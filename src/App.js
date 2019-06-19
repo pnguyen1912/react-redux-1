@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      pageNum: ''
+      pageNum: 'home'
     }
   }
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <header>People Rolodex</header>
+          <Link onClick={() => this.setState({ pageNum: 'home' })} to='/' params="" ><header>People Rolodex</header></Link>
           <ul className="menu">
             <li className={this.state.pageNum === 'home' ? 'is-active' : ''} onClick={() => this.setState({ pageNum: 'home' })}> <Link style={{ paddingLeft: '20px' }} to='/' params="" >Home</Link></li>
             <li className={this.state.pageNum === 'people' ? 'is-active' : ''} onClick={() => this.setState({ pageNum: 'people' })} ><Link style={{ paddingLeft: '20px' }} to='/people'>People</Link></li>

@@ -65,15 +65,11 @@ class Add extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    todos: state.todos,
-  }
-}
+
 const mapDispatchToProps = dispatch => {
   return {
     addPeople: person => dispatch(addPeople(person)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Add)
+export default connect(null, mapDispatchToProps)(Add)
