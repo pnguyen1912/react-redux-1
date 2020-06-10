@@ -8,6 +8,8 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PEOPLE:
+      return { people: [...state.people, action.payload] }
+    case EDIT_PEOPLE:
       return Object.assign({}, state, {
         people: [
           ...state.people,
@@ -19,10 +21,7 @@ export const reducer = (state = initialState, action) => {
           }
         ]
       })
-    case EDIT_PEOPLE:
-      return {
 
-      }
     default:
       return state;
   }

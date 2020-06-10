@@ -6,7 +6,8 @@ class People extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      highlight: ''
+      highlight: '',
+      edit: false,
     };
   }
 
@@ -41,8 +42,11 @@ class People extends React.Component {
             {this.state.item && (
               <div id='details'>
                 <div className="card">
-                  <div className="card-divider">Full Name:
-              {this.state.item.name}
+                  <div className="card-divider"> <input type="checkbox" onChange={(e) => this.setState({ edit: e.checked })} ></input><div>Full Name:
+              {this.state.edit
+                      ? <input value={this.state.item.name} type="text"></input>
+                      : this.state.item.name}</div>
+
                   </div>
                   <div className="card-section">
                     <h4>Hometown:{this.state.item.town}</h4>
